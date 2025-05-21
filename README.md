@@ -1,20 +1,20 @@
 # 常用命令
-php bin/hyperf.php gen:migration create_users_table   生成数据库迁移文件
-php bin/hyperf.php migrate    执行数据库迁移
-php bin/hyperf.php gen:model table_name  生成模型
-php bin/hyperf.php gen:request FooRequest  生成验证表单
+- php bin/hyperf.php gen:migration create_users_table   生成数据库迁移文件
+- php bin/hyperf.php migrate    执行数据库迁移
+- php bin/hyperf.php gen:model table_name  生成模型
+- php bin/hyperf.php gen:request FooRequest  生成验证表单
 
 # 部署
 
 
-cp .env.example .env
-cp docker-compose.yml-dev docker-compose.yml
-docker build -t api-hyperf:latest .
-docker-compose up -d
+- cp .env.example .env
+- cp docker-compose.yml-dev docker-compose.yml
+- docker build -t api-hyperf:latest .
+- docker-compose up -d
 
 
 # 重启
-docker-compose up -d --force-recreate api-hyperf
+- docker-compose up -d --force-recreate api-hyperf
 
 # 项目结构
 
