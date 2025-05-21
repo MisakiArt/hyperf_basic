@@ -1,0 +1,3 @@
+# ~/bin/php-docker
+#!/bin/bash
+docker exec -i api-hyperf-compassedu php "$@"

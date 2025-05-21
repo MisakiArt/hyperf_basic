@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  api-hyperf:
+    container_name: api-hyperf
+    image: api-hyperf:latest
+    entrypoint: ["/bin/bash", "-c", "composer install && php ./bin/hyperf.php start"]
+    build:
+      context: .
+    volumes:
+      - ./:/opt/www
+    ports:
+      - 9501:9501
+    environment:
+      - APP_ENV=test
+      - SCAN_CACHEABLE=false
+    restart: always  # 确保容器在失败时自动重启
+networks:
+  default:
