@@ -18,8 +18,6 @@ return [
             'mixin',
         ],
         'class_map'=>[
-            Fan\Feishu\Oauth\OauthProvider::class => BASE_PATH . '/classmap/OauthProvider.php',
-            Fan\Feishu\Message\MessageProvider::class => BASE_PATH . '/classmap/MessageProvider.php',
             Smalot\PdfParser\Font::class => BASE_PATH . '/classmap/Font.php',
         ]
     ],

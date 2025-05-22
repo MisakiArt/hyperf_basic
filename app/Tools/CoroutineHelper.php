@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Tools;
 
+use Hyperf\Context\Context;
 use Hyperf\Coroutine\Coroutine;
 
 class CoroutineHelper
@@ -15,7 +16,9 @@ class CoroutineHelper
      */
     public static function safeGo(callable $callback, ?callable $onException = null): void
     {
-        Coroutine::create(function () use ($callback, $onException) {
+        $current_coroutine_id = Coroutine::id();
+        Coroutine::create(function () use ($callback, $onException,$current_coroutine_id) {
+            Context::copy($current_coroutine_id);
             try {
                 $callback();
             } catch (\Throwable $e) {
