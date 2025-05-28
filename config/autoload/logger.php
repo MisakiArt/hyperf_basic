@@ -17,6 +17,7 @@ return [
                 'class' => Monolog\Handler\RotatingFileHandler::class,
                 'constructor' => [
                     'filename' => BASE_PATH . '/runtime/logs/hyperf.log',
+                    'maxFiles' =>30,
                     'level' => env('LOGGER_LEVEL', Monolog\Logger::INFO),
                 ],],
             [
