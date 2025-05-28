@@ -9,6 +9,7 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
+use function Hyperf\Support\env;
 return [
     'default' => [
         'handlers' => [
@@ -16,7 +17,7 @@ return [
                 'class' => Monolog\Handler\RotatingFileHandler::class,
                 'constructor' => [
                     'filename' => BASE_PATH . '/runtime/logs/hyperf.log',
-                    'level' => Monolog\Logger::DEBUG,
+                    'level' => env('LOGGER_LEVEL', Monolog\Logger::INFO),
                 ],],
             [
                 'class' => App\Exception\Handler\SentryFormHandler::class,
