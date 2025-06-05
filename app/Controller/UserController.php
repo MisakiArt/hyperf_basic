@@ -48,7 +48,6 @@ class UserController extends AbstractController
     {
         $user = $this->auth->guard('jwt')->user();
         $user = $user->toArray();
-        $user['is_hr'] = (int)(make(UserService::class)->checkUserIsHr($user['user_id']));
         return $this->response($user);
     }
 }

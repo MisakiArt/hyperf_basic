@@ -93,22 +93,6 @@ class Helper
     }
 
 
-
-    public function getAppUrl()
-    {
-        if ($this->env == 'live') {
-            return $this->app_domain;
-        } else {
-            return $this->app_domain.'/recruit';
-        }
-    }
-
-
-    public  static function hasChinese($string)
-    {
-        return preg_match('/[\x{4e00}-\x{9fa5}]/u', $string);
-    }
-
     public static function getRuntimePath()
     {
         return dirname(__DIR__).'/../runtime';
